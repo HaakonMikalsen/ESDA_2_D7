@@ -9,9 +9,9 @@ import matplotlib.ticker as mticker
 dir_path = os.path.dirname(os.path.realpath(__file__))
 filePath = dir_path+"/data/ampRespons"
 
-dataFile = codecs.open(dir_path+"/data/"+"frekvREsponFull.csv", encoding="utf-8", errors="ignore")
+dataFile = codecs.open(dir_path+"/data/"+"very noce frekresponm.csv", encoding="utf-8", errors="ignore")
 skipLinesStart = 27
-skipLinesEnd = 256
+skipLinesEnd = None
 f,A= np.array(list(csv.reader(dataFile.readlines()[skipLinesStart:skipLinesEnd]))).T
 dataFile.close()
 
@@ -33,7 +33,6 @@ plt.axhline(y=-3,linestyle="--",  color="green", linewidth=1)
 
 plt.axhline(y=AStoppVal,linestyle="--",  color="purple", linewidth=1)
 plt.axvline(x=4500,linestyle="--",  color="purple", linewidth=1,label=f"A_stopp {AStoppVal:.2f}dB (ved 4.5kHz)")
-
 
 plt.plot(
     f,
@@ -68,7 +67,7 @@ plt.legend(frameon=True, edgecolor="dimgray", facecolor="lavender", fontsize=12)
 
 plt.tight_layout()
 
-plt.xticks([200,1000,2000,3000,3500,4500,6000,7000,8000,9000,10000])
+# plt.xticks([200,1000,2000,3000,3500,4500,6000,7000,8000,9000,10000])
 plt.yticks([-3,-10,-20,-30,-40,-50])
 
 

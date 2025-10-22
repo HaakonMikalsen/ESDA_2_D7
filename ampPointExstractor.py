@@ -23,7 +23,6 @@ for fileName in fileList:
 
     f = np.array([element for element in f],dtype=float)
     A = np.array([element for element in A],dtype=float)
-
     nameList.append(fileName)
     f_c.append(dataFinder.findValueInterpolate(A,-3,f))
     A_stopp.append(dataFinder.findValueInterpolate(f,4500,A))
